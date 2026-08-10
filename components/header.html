@@ -1,0 +1,115 @@
+<svg class="svg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="flag-nl" viewBox="0 0 60 30">
+    <rect width="60" height="30" fill="#21468b"/>
+    <rect width="60" height="20" fill="#ffffff"/>
+    <rect width="60" height="10" fill="#ae1c28"/>
+  </symbol>
+  <symbol id="flag-en" viewBox="0 0 60 30">
+    <clipPath id="uk-clip-outer"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+    <clipPath id="uk-clip-diag"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+    <g clip-path="url(#uk-clip-outer)">
+      <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#ffffff" stroke-width="6"/>
+      <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#uk-clip-diag)" stroke="#c8102e" stroke-width="4"/>
+      <path d="M30,0 v30 M0,15 h60" stroke="#ffffff" stroke-width="10"/>
+      <path d="M30,0 v30 M0,15 h60" stroke="#c8102e" stroke-width="6"/>
+    </g>
+  </symbol>
+</svg>
+
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Direct naar de inhoud</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" data-i18n-aria="a11y.brandHome" aria-label="Garagebedrijf Dennis, terug naar de homepage">
+      <span class="brand-plate">
+        <svg class="brand-mark" viewBox="0 0 44 50" fill="none" aria-hidden="true" focusable="false">
+          <path d="M22 1.7 41.4 12.9v22.2L22 46.3 2.6 35.1V12.9z" fill="#e10600"/>
+          <path d="M22 1.7 41.4 12.9v22.2L22 46.3 2.6 35.1V12.9z" stroke="#ffffff" stroke-opacity=".45" stroke-width="1.6"/>
+          <path d="M12 13h9c6.6 0 11 4.9 11 11s-4.4 11-11 11h-9zm5.5 5.2v11.6H21c3.3 0 5.5-2.4 5.5-5.8s-2.2-5.8-5.5-5.8z" fill="#ffffff" fill-rule="evenodd"/>
+        </svg>
+        <span class="brand-words">
+          <span class="brand-top">Garagebedrijf</span>
+          <span class="brand-name">Dennis</span>
+        </span>
+      </span>
+    </a>
+
+    <nav class="nav-desktop" data-i18n-aria="a11y.mainNav" aria-label="Hoofdnavigatie">
+      <ul class="nav-links">
+        <li><a href="index.html" data-nav="home" data-i18n="nav.home">Home</a></li>
+        <li><a href="diensten.html" data-nav="diensten" data-i18n="nav.services">Diensten</a></li>
+        <li><a href="merken.html" data-nav="merken" data-i18n="nav.brands">Merken</a></li>
+        <li><a href="contact.html" data-nav="contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch">
+        <button class="lang-toggle" type="button" id="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu" data-i18n-aria="a11y.langToggle" aria-label="Taal kiezen">
+          <svg class="flag" aria-hidden="true" focusable="false"><use id="lang-flag-use" href="#flag-nl"></use></svg>
+          <span class="lang-current" id="lang-current">NL</span>
+          <svg class="lang-caret" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 8 5 5 5-5"/></svg>
+        </button>
+        <ul class="lang-menu" id="lang-menu">
+          <li>
+            <button type="button" data-lang="nl">
+              <svg class="flag" aria-hidden="true" focusable="false"><use href="#flag-nl"></use></svg>
+              <span>Nederlands</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" data-lang="en">
+              <svg class="flag" aria-hidden="true" focusable="false"><use href="#flag-en"></use></svg>
+              <span>English</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <a class="btn btn--primary header-cta" href="tel:0703080596">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.15.38 2.36.58 3.6.58a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.58 3.6a1 1 0 0 1-.25 1z"/></svg>
+        <span data-i18n="cta.callHeader">Bel 070-3080596</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-i18n-aria="a11y.menuToggle" aria-label="Menu openen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <nav data-i18n-aria="a11y.mobileNav" aria-label="Mobiele navigatie">
+    <ul class="mobile-nav">
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="diensten.html" data-i18n="nav.services">Diensten</a></li>
+      <li><a href="merken.html" data-i18n="nav.brands">Merken</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <a class="btn btn--primary" href="tel:0703080596">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.15.38 2.36.58 3.6.58a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.58 3.6a1 1 0 0 1-.25 1z"/></svg>
+    <span data-i18n="cta.callHeader">Bel 070-3080596</span>
+  </a>
+
+  <div class="mobile-lang">
+    <span class="mobile-lang-label" data-i18n="lang.label">Taal</span>
+    <div class="mobile-lang-options">
+      <button type="button" data-lang="nl">
+        <svg class="flag" aria-hidden="true" focusable="false"><use href="#flag-nl"></use></svg>
+        <span>NL</span>
+      </button>
+      <button type="button" data-lang="en">
+        <svg class="flag" aria-hidden="true" focusable="false"><use href="#flag-en"></use></svg>
+        <span>EN</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-contact">
+    <p>Goudlaan 63, 2544 EG Den Haag</p>
+    <p><a href="tel:0616724822">06-16724822</a></p>
+  </div>
+</div>
