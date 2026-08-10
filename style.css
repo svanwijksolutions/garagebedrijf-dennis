@@ -804,6 +804,9 @@ body.menu-open .menu-toggle span:nth-child(3) {
 }
 
 .mobile-contact a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--white);
   font-weight: 600;
 }
@@ -937,6 +940,9 @@ body.menu-open {
 }
 
 .quick-row a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--white);
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
@@ -1469,10 +1475,11 @@ body.menu-open {
 }
 
 .contact-list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--white);
   border-bottom: 1px solid rgba(255, 255, 255, 0.22);
-  display: inline-block;
-  min-height: 24px;
   transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
 }
 
@@ -1550,6 +1557,7 @@ body.menu-open {
 }
 
 .prose a {
+  position: relative;
   color: var(--white);
   border-bottom: 1px solid var(--red);
 }
@@ -1637,6 +1645,19 @@ body.menu-open {
   margin: 0 0 0.7rem;
 }
 
+.footer-col p a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--text-muted);
+  transition: color 0.25s var(--ease);
+}
+
+.footer-col p a:hover,
+.footer-col p a:focus-visible {
+  color: var(--red-bright);
+}
+
 .footer-links {
   list-style: none;
   margin: 0;
@@ -1648,7 +1669,7 @@ body.menu-open {
 .footer-links a {
   display: inline-flex;
   align-items: center;
-  min-height: 40px;
+  min-height: 44px;
   font-size: 0.93rem;
   color: var(--text-muted);
   transition: color 0.25s var(--ease);
@@ -1692,6 +1713,9 @@ body.menu-open {
 }
 
 .footer-bottom a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--text-muted);
   border-bottom: 1px solid transparent;
   transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
@@ -1743,8 +1767,21 @@ body.menu-open {
 }
 
 .cookie-notice a {
+  position: relative;
   color: var(--white);
   border-bottom: 1px solid var(--red);
+}
+
+/* Onzichtbaar aanraakvlak van 44px rond links die midden in een zin staan. */
+.prose a::after,
+.cookie-notice a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 44px;
+  transform: translateY(-50%);
 }
 
 .cookie-notice .btn {
