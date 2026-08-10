@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Garagebedrijf Dennis — demo-ontwerp
+   Garagebedrijf Dennis, demo-ontwerp
    Header/footer inladen, mobiel menu, taalswitcher, tellers en beweging.
    ========================================================================== */
 (function () {
