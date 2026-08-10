@@ -23,6 +23,8 @@
   "day.sat": "Zaterdag",
   "day.sun": "Zondag",
   "hours.closed": "Gesloten",
+  "hours.weekday": "09:00 tot 18:00",
+  "hours.saturday": "10:00 tot 14:00",
   "footer.madeBy": "Website gemaakt door <a href=\"https://svanwijksolutions.nl\" target=\"_blank\" rel=\"noopener\">S. van Wijk Solutions</a>",
   "footer.privacy": "Privacyverklaring",
   "cookie.text": "Deze website slaat alleen uw taalkeuze op in de browser en laadt lettertypen en een kaart van Google. Meer daarover leest u in de <a href=\"privacy.html\">privacyverklaring</a>.",
