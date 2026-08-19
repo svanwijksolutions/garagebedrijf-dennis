@@ -158,31 +158,60 @@
     if (!nodes.length) return;
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    for (var i = 0; i < nodes.length; i++) {
-      run(nodes[i], i * 120);
+    /* Zonder beweging of zonder observer: meteen het eindgetal tonen. */
+    if (reduce || typeof window.IntersectionObserver !== 'function') {
+      for (var i = 0; i < nodes.length; i++) {
+        var t = parseInt(nodes[i].getAttribute('data-count'), 10);
+        nodes[i].textContent = isNaN(t) ? nodes[i].textContent : String(t);
+      }
+      return;
     }
 
-    function run(node, delay) {
+    for (var s = 0; s < nodes.length; s++) nodes[s].textContent = '0';
+
+    /* De teller loopt pas op zodra hij in beeld komt. */
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          observer.unobserve(entry.target);
+          animate(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    for (var o = 0; o < nodes.length; o++) observer.observe(nodes[o]);
+
+    /* Vangnet: tellers die na 4s nog niet in beeld kwamen, tonen meteen het eindgetal. */
+    window.setTimeout(function () {
+      for (var m = 0; m < nodes.length; m++) {
+        var node = nodes[m];
+        if (node.getAttribute('data-counted')) continue;
+        observer.unobserve(node);
+        var v = parseInt(node.getAttribute('data-count'), 10);
+        if (!isNaN(v)) {
+          node.setAttribute('data-counted', '1');
+          node.textContent = String(v);
+        }
+      }
+    }, 4000);
+
+    function animate(node) {
+      if (node.getAttribute('data-counted')) return;
       var target = parseInt(node.getAttribute('data-count'), 10);
       if (isNaN(target)) return;
-      if (reduce) {
-        node.textContent = String(target);
-        return;
-      }
+      node.setAttribute('data-counted', '1');
       node.textContent = '0';
-      window.setTimeout(function () {
-        var start = null;
-        var duration = 1300;
-        function step(ts) {
-          if (start === null) start = ts;
-          var p = Math.min((ts - start) / duration, 1);
-          var eased = 1 - Math.pow(1 - p, 3);
-          node.textContent = String(Math.round(target * eased));
-          if (p < 1) window.requestAnimationFrame(step);
-          else node.textContent = String(target);
-        }
-        window.requestAnimationFrame(step);
-      }, delay);
+      var start = null;
+      var duration = 1300;
+      function step(ts) {
+        if (start === null) start = ts;
+        var p = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        node.textContent = String(Math.round(target * eased));
+        if (p < 1) window.requestAnimationFrame(step);
+        else node.textContent = String(target);
+      }
+      window.requestAnimationFrame(step);
     }
   }
 

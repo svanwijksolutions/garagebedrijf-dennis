@@ -162,22 +162,22 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 6.4vw, 5rem);
+  font-size: clamp(2.3rem, 5.7vw, 4.4rem);
   font-weight: 900;
   letter-spacing: -0.025em;
 }
 
 h2 {
-  font-size: clamp(2.05rem, 4.8vw, 3.7rem);
+  font-size: clamp(1.85rem, 4.2vw, 3.15rem);
 }
 
 h3 {
-  font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+  font-size: clamp(1.28rem, 2.3vw, 1.62rem);
   letter-spacing: 0.005em;
 }
 
 h4 {
-  font-size: 1.2rem;
+  font-size: 1.08rem;
   letter-spacing: 0.02em;
 }
 
@@ -190,7 +190,7 @@ p:last-child {
 }
 
 .lead {
-  font-size: clamp(1.05rem, 1.9vw, 1.22rem);
+  font-size: clamp(1rem, 1.6vw, 1.14rem);
   color: var(--text-muted);
   max-width: 46rem;
 }
@@ -455,7 +455,7 @@ p:last-child {
 
 .brand-name {
   font-family: var(--font-display);
-  font-size: 1.7rem;
+  font-size: 1.55rem;
   font-weight: 900;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -465,7 +465,7 @@ p:last-child {
 }
 
 .site-header.scrolled .brand-name {
-  font-size: 1.45rem;
+  font-size: 1.34rem;
 }
 
 .brand-footer .brand-plate {
@@ -478,7 +478,7 @@ p:last-child {
 }
 
 .brand-footer .brand-name {
-  font-size: 2rem;
+  font-size: 1.82rem;
 }
 
 /* Desktop-navigatie */
@@ -737,7 +737,7 @@ body.menu-open .menu-toggle span:nth-child(3) {
   min-height: 60px;
   padding: 0.9rem 0.2rem;
   font-family: var(--font-display);
-  font-size: 1.9rem;
+  font-size: 1.72rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.01em;
@@ -846,7 +846,7 @@ body.menu-open {
 
 .hero h1 {
   max-width: 17ch;
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(2.3rem, 4.6vw, 4rem);
 }
 
 .hero .lead {
@@ -927,7 +927,7 @@ body.menu-open {
 .quick-row strong {
   display: block;
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.14rem;
   font-weight: 800;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -984,7 +984,7 @@ body.menu-open {
 
 .rdw-card h2,
 .rdw-card h3 {
-  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  font-size: clamp(1.3rem, 2.3vw, 1.62rem);
   margin-bottom: 0.4rem;
 }
 
@@ -1007,15 +1007,34 @@ body.menu-open {
 }
 
 .counter {
+  position: relative;
   background: rgba(14, 16, 19, 0.92);
-  padding: clamp(1.5rem, 3.4vw, 2.2rem);
+  padding: clamp(1.7rem, 3.6vw, 2.5rem) clamp(1.5rem, 3.4vw, 2.2rem);
   text-align: center;
+  transition: background-color 0.4s var(--ease);
+}
+
+/* Rode kaplijn boven elke teller, motorsport-accent. */
+.counter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 46px;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  background: linear-gradient(90deg, var(--red), var(--red-bright));
+}
+
+.counter:hover {
+  background: rgba(20, 23, 27, 0.96);
 }
 
 .counter-value {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 4.4rem);
+  font-size: clamp(2.9rem, 6.4vw, 4rem);
   font-weight: 900;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -1024,8 +1043,8 @@ body.menu-open {
 
 .counter-label {
   display: block;
-  margin-top: 0.5rem;
-  font-size: 0.86rem;
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
   letter-spacing: 0.06em;
   color: var(--text-muted);
 }
@@ -1081,7 +1100,7 @@ body.menu-open {
 
 .card h2,
 .card h3 {
-  font-size: clamp(1.4rem, 2.6vw, 1.95rem);
+  font-size: clamp(1.28rem, 2.3vw, 1.62rem);
   margin-bottom: 0.55rem;
 }
 
@@ -1176,12 +1195,22 @@ body.menu-open {
   padding-block: 0.5rem;
 }
 
+/* Twee sporen die de andere kant op lopen voor een rijker, moderner beeld. */
+.brand-strip + .brand-strip {
+  margin-top: 0.85rem;
+}
+
 .brand-strip-track {
   display: flex;
-  gap: 0.7rem;
+  gap: 0.85rem;
   width: max-content;
-  animation: strip-scroll 46s linear infinite;
+  animation: strip-scroll 58s linear infinite;
   will-change: transform;
+}
+
+.brand-strip-track--reverse {
+  animation-direction: reverse;
+  animation-duration: 66s;
 }
 
 .brand-strip:hover .brand-strip-track {
@@ -1193,19 +1222,33 @@ body.menu-open {
   to { transform: translateX(-50%); }
 }
 
-.brand-chip {
+/* Merklogo's op een lichte plaat, gelijk uitgelijnd in de lopende balk. */
+.brand-logo {
   flex: 0 0 auto;
-  padding: 0.6rem 1.15rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 116px;
+  height: 66px;
+  padding: 0.65rem 1rem;
+  background: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 24px -18px rgba(0, 0, 0, 0.8);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.brand-logo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px -20px rgba(0, 0, 0, 0.85);
+}
+
+.brand-logo img {
+  width: auto;
+  max-width: 84px;
+  max-height: 40px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .brand-wall {
@@ -1349,13 +1392,6 @@ body.menu-open {
   color: var(--text-dim);
 }
 
-.tm-foot {
-  margin-top: 2.2rem;
-  text-align: center;
-  font-size: 0.88rem;
-  color: var(--text-dim);
-}
-
 /* --------------------------------------------------------------------------
    12. Openingstijden & contact
    -------------------------------------------------------------------------- */
@@ -1416,7 +1452,7 @@ body.menu-open {
 
 .hours-time {
   font-family: var(--font-display);
-  font-size: 1.32rem;
+  font-size: 1.22rem;
   font-weight: 800;
   letter-spacing: 0.03em;
   color: var(--white);
@@ -1424,7 +1460,7 @@ body.menu-open {
 
 .hours-time.is-closed {
   color: var(--text-dim);
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
 
 .hours-note {
@@ -1460,7 +1496,7 @@ body.menu-open {
 .contact-list strong {
   display: block;
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 800;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -1631,7 +1667,7 @@ body.menu-open {
 }
 
 .footer-col h4 {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   letter-spacing: 0.12em;
   color: var(--white);
   margin-bottom: 1rem;
@@ -1817,6 +1853,13 @@ body.js-motion .reveal.in-view {
   transform: none;
 }
 
+/* Gestaggerde reveal: kaarten in een rij komen kort na elkaar in beeld. */
+body.js-motion .grid > .reveal:nth-child(2) { transition-delay: 0.08s; }
+body.js-motion .grid > .reveal:nth-child(3) { transition-delay: 0.16s; }
+body.js-motion .grid > .reveal:nth-child(4) { transition-delay: 0.24s; }
+body.js-motion .grid > .reveal:nth-child(5) { transition-delay: 0.32s; }
+body.js-motion .grid > .reveal:nth-child(6) { transition-delay: 0.4s; }
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1883,7 +1926,7 @@ body.js-motion .reveal.in-view {
   }
 
   .counters {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .split {
